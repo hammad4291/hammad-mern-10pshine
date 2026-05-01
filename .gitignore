@@ -1,0 +1,25 @@
+# SonarQube
+.scannerwork/
+sonar-project.properties
+
+# Dependency folders
+node_modules/
+jspm_packages/
+
+# Build outputs
+dist/
+build/
+bin/
+obj/
+
+# IDEs and Editors
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Environment variables (Keep your secrets safe!)
+.env
+.env.local
