@@ -1,0 +1,48 @@
+2026-05-22 18:38:35.539 +05:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-22 18:38:35.674 +05:00 [INF] Starting Web Host...
+2026-05-22 18:38:38.554 +05:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2026-05-22 18:38:38.740 +05:00 [INF] Now listening on: https://localhost:7178
+2026-05-22 18:38:38.773 +05:00 [INF] Now listening on: http://localhost:5227
+2026-05-22 18:38:39.034 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-22 18:38:39.244 +05:00 [INF] Hosting environment: Development
+2026-05-22 18:38:39.289 +05:00 [INF] Content root path: E:\10P\Task-Management-System\backend\backend
+2026-05-22 18:39:56.111 +05:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-22 18:39:56.194 +05:00 [INF] Starting Web Host...
+2026-05-22 18:39:56.683 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/swagger - null null
+2026-05-22 18:39:56.888 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-22 18:39:56.889 +05:00 [INF] Hosting environment: Development
+2026-05-22 18:39:56.889 +05:00 [INF] Content root path: E:\10P\Task-Management-System\backend\backend
+2026-05-22 18:39:57.280 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/swagger/index.html - null null
+2026-05-22 18:39:57.342 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/swagger - 301 null null 678.8309ms
+2026-05-22 18:39:57.518 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/swagger/index.html - 200 null text/html;charset=utf-8 238.2201ms
+2026-05-22 18:39:57.553 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-22 18:39:57.548 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/swagger/swagger-ui.css - null null
+2026-05-22 18:39:57.553 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/swagger/swagger-ui-bundle.js - null null
+2026-05-22 18:39:57.598 +05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-05-22 18:39:57.599 +05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-05-22 18:39:57.609 +05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-05-22 18:39:57.614 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/swagger/swagger-ui.css - 200 152034 text/css 66.4016ms
+2026-05-22 18:39:57.616 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 68.0631ms
+2026-05-22 18:39:57.630 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-22 18:39:57.637 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 5.7968ms
+2026-05-22 18:39:57.660 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_vs/browserLink - null null
+2026-05-22 18:39:57.680 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 126.9874ms
+2026-05-22 18:39:57.826 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_vs/browserLink - 200 null text/javascript; charset=UTF-8 166.4131ms
+2026-05-22 18:39:58.597 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/swagger/v1/swagger.json - null null
+2026-05-22 18:39:58.615 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.1577ms
+2026-05-22 18:39:58.673 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/swagger/favicon-32x32.png - null null
+2026-05-22 18:39:58.675 +05:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-05-22 18:39:58.675 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/swagger/favicon-32x32.png - 200 628 image/png 2.2606ms
+2026-05-22 18:42:21.016 +05:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-22 18:42:21.084 +05:00 [INF] Starting Web Host...
+2026-05-22 18:42:21.420 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/swagger/index.html - null null
+2026-05-22 18:42:21.645 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-22 18:42:21.646 +05:00 [INF] Hosting environment: Development
+2026-05-22 18:42:21.646 +05:00 [INF] Content root path: E:\10P\Task-Management-System\backend\backend
+2026-05-22 18:42:21.964 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/swagger/index.html - 200 null text/html;charset=utf-8 558.0929ms
+2026-05-22 18:42:22.014 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-22 18:42:22.029 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 13.1921ms
+2026-05-22 18:42:22.075 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_vs/browserLink - null null
+2026-05-22 18:42:22.137 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_vs/browserLink - 200 null text/javascript; charset=UTF-8 62.5565ms
+2026-05-22 18:42:22.615 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/swagger/v1/swagger.json - null null
+2026-05-22 18:42:22.631 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.282ms

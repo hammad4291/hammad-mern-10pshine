@@ -1,0 +1,10 @@
+﻿E:\10P\Task-Management-System\backend\backend\Program.cs
+E:\10P\Task-Management-System\backend\backend\WeatherForecast.cs
+E:\10P\Task-Management-System\backend\backend\obj\Debug\net8.0\backend.GlobalUsings.g.cs
+E:\10P\Task-Management-System\backend\backend\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+E:\10P\Task-Management-System\backend\backend\obj\Debug\net8.0\backend.AssemblyInfo.cs
+E:\10P\Task-Management-System\backend\backend\obj\Debug\net8.0\backend.MvcApplicationPartsAssemblyInfo.cs
+E:\10P\Task-Management-System\backend\backend\appsettings.Development.json
+E:\10P\Task-Management-System\backend\backend\appsettings.json
+E:\10P\Task-Management-System\backend\backend\backend.http
+E:\10P\Task-Management-System\backend\backend\Properties\launchSettings.json
