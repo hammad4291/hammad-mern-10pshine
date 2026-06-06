@@ -68,4 +68,58 @@ public class TasksController : ControllerBase
         await _context.SaveChangesAsync();
         return Ok("Task removed successfully.");
     }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateTask(int id, [FromBody] TaskUpdateDto dto)
+    {
+        int currentUserId = GetLoggedInUserId();
+
+        // Extract the role name string from the logged-in user's token claims
+        string userRole = User.FindFirst(System.Security.Claims.ClaimTypes.Role)!.Value;
+
+        // Fetch the task from the database
+        var task = await _context.Tasks.FirstOrDefaultAsync(t => t.Id == id);
+        if (task == null) return NotFound("Task not found.");
+
+        // Update universal fields allowed for everyone
+        task.Title = dto.Title;
+        task.Description = dto.Description;
+        task.Status = dto.Status;
+        task.Priority = dto.Priority;
+        task.DueDate = dto.DueDate;
+        task.CategoryId = dto.CategoryId;
+
+        // BUSINESS RULE: Role-Based Assignment Logic
+        if (userRole == "Admin")
+        {
+            // If an Admin provided a targeted user ID, apply it; otherwise default back to the Admin
+            task.AssignedToUserId = dto.AssignedToUserId.HasValue ? dto.AssignedToUserId.Value : currentUserId;
+        }
+        else
+        {
+            // If a normal user is editing, they can NEVER assign it to someone else
+            task.AssignedToUserId = currentUserId;
+        }
+
+        await _context.SaveChangesAsync();
+        return Ok("Task updated successfully.");
+    }
+
+    [HttpGet("assignable-users")]
+    [Authorize(Roles = "Admin")] // 🛡️ Security Gate: Only Admins can access this list
+    public async Task<IActionResult> GetAssignableUsers()
+    {
+        // Fetch users whose linked role name matches "User"
+        var users = await _context.Users
+            .Where(u => u.Role.Name == "User")
+            .Select(u => new UserSelectDto
+            {
+                Id = u.Id,
+                Username = u.Username
+            })
+            .ToListAsync();
+
+        return Ok(users);
+    }
+
 }

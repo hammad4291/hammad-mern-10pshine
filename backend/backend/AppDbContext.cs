@@ -32,5 +32,30 @@ public class AppDbContext : DbContext
             .WithMany(u => u.CreatedTasks)
             .HasForeignKey(t => t.CreatedByUserId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Role>().HasData(
+    new Role { Id = 1, Name = "Admin" },
+    new Role { Id = 2, Name = "User" }
+);
+
+        modelBuilder.Entity<Category>().HasData(
+            new Category { Id = 1, Name = "Work" },
+            new Category { Id = 2, Name = "Personal" },
+            new Category { Id = 3, Name = "Urgent" }
+        );
+
+        // 4. SEED HARDCODED ADMIN USER
+        modelBuilder.Entity<User>().HasData(
+            new User
+            {
+                Id = 1,
+                Username = "admin",
+                Email = "admin@gmail.com",
+                Password = "123",
+                RoleId = 1,
+                RefreshToken = string.Empty,
+                RefreshTokenExpiryTime = DateTime.UtcNow
+            }
+        );
     }
 }
