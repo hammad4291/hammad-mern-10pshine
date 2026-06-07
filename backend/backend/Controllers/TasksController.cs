@@ -170,4 +170,49 @@ public class TasksController : ControllerBase
 
         return Ok(categories);
     }
+
+    [HttpPost("categories")]
+    [Authorize(Roles = "Admin")] // Restricts creation pipeline strictly to system administrators
+    public async Task<IActionResult> CreateCategory([FromBody] CategoryDto dto)
+    {
+        if (dto == null || string.IsNullOrWhiteSpace(dto.Name))
+            return BadRequest("Category name cannot be empty.");
+
+        // Enforce data integrity and uniqueness constraints on names
+        bool exists = await _context.Categories.AnyAsync(c => c.Name.ToLower() == dto.Name.Trim().ToLower());
+        if (exists)
+            return BadRequest("A category with this name already exists.");
+
+        var category = new Category
+        {
+            Name = dto.Name.Trim()
+        };
+
+        _context.Categories.Add(category);
+        await _context.SaveChangesAsync();
+
+        return Ok("Category created successfully.");
+    }
+
+    [HttpPut("categories/{id}")]
+    [Authorize(Roles = "Admin")] // Restricts modifications strictly to system administrators
+    public async Task<IActionResult> UpdateCategory(int id, [FromBody] CategoryDto dto)
+    {
+        if (dto == null || string.IsNullOrWhiteSpace(dto.Name))
+            return BadRequest("Category name cannot be empty.");
+
+        var category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id);
+        if (category == null)
+            return NotFound("Category not found.");
+
+        // Validate that the updated name doesn't collision overlap with existing entries
+        bool nameTaken = await _context.Categories.AnyAsync(c => c.Id != id && c.Name.ToLower() == dto.Name.Trim().ToLower());
+        if (nameTaken)
+            return BadRequest("Another category already matches that name.");
+
+        category.Name = dto.Name.Trim();
+
+        await _context.SaveChangesAsync();
+        return Ok("Category updated successfully.");
+    }
 }

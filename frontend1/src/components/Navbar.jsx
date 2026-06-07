@@ -29,6 +29,7 @@ export default function Navbar() {
       { name: "Dashboard", path: "/admin/dashboard", icon: "📊" },
       { name: "Tasks Control", path: "/admin/tasks", icon: "📋" },
       { name: "Create Task", path: "/tasks/new", icon: "➕" },
+      { name: 'Category Control', path: '/admin/categories', icon: '🏷️' },
       { name: "Profile", path: "/profile", icon: "👤" },
     ],
     User: [

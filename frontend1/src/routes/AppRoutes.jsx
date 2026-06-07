@@ -8,7 +8,7 @@ import UserTasksPage from '../pages/UserTasksPage'; // Explicitly named for stan
 import DashboardLayout from '../layouts/DashboardLayout';
 import ProfilePage from '../pages/ProfilePage';
 import AdminTasksPage from '../pages/AdminTasksPage'; // Future Admin target route placeholder
-
+import AdminCategoryPage from '../pages/AdminCategoryPage'; // Future Admin target route placeholder
 const RoleProtectedRoute = ({ allowedRoles }) => {
     const token = localStorage.getItem('accessToken');
     const role = localStorage.getItem('userRole');
@@ -44,6 +44,7 @@ export default function AppRoutes() {
             </Route>
             <Route element={<RoleProtectedRoute allowedRoles={['Admin']} />}>
                 <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
+                <Route path="/admin/categories" element={<AdminCategoryPage />} />
                 <Route path="/admin/tasks" element={<AdminTasksPage />} /> {/* Future Admin target route placeholder */}
                 {/* Future Admin target route could look like: 
                 <Route path="/admin/tasks" element={<AdminTasksPage />} /> */}

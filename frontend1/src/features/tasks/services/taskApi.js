@@ -40,6 +40,26 @@ export const fetchAssignableUsers = async () => {
     return await API.get('/tasks/assignable-users');
 };
 
+/**
+ * Fetch all available global task categories.
+ * Endpoint: GET /api/tasks/categories
+ */
 export const fetchCategories = async () => {
     return await API.get('/tasks/categories');
+};
+
+/**
+ * Create a brand new task category. Exclusive to Admin accounts.
+ * Endpoint: POST /api/tasks/categories
+ */
+export const createCategory = async (categoryData) => {
+    return await API.post('/tasks/categories', categoryData);
+};
+
+/**
+ * Update an existing task category name. Exclusive to Admin accounts.
+ * Endpoint: PUT /api/tasks/categories/{id}
+ */
+export const updateCategory = async (id, categoryData) => {
+    return await API.put(`/tasks/categories/${id}`, categoryData);
 };

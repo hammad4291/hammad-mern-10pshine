@@ -1,0 +1,106 @@
+/* Stack Layout for Category Row items cards systems */
+.category-list-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.category-item-row-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.01);
+    transition: border-color 0.2s ease;
+}
+
+.category-item-row-card:hover {
+    border-color: #cbd5e1;
+}
+
+/* Inner Input elements tracking systems alignment nodes */
+.category-input-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    margin-right: 24px;
+}
+
+.category-marker-bullet {
+    font-size: 18px;
+    user-select: none;
+}
+
+.category-inline-input {
+    width: 100%;
+    max-width: 400px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+    outline: none;
+    transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.category-inline-input:focus,
+.category-inline-input:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.category-inline-input:focus {
+    border-color: #00a3a4;
+    box-shadow: 0 0 0 3px rgba(0, 163, 164, 0.08);
+}
+
+/* Specific button tweaks for inline alignments layout structures */
+.category-inline-update-btn {
+    padding: 10px 20px !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+    flex-shrink: 0;
+}
+
+/* Error feedback container inside modal context */
+.category-modal-error {
+    background-color: #fee2e2;
+    color: #dc2626;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    border: 1px solid #fca5a5;
+    animation: fadeIn 0.2s ease-out;
+}
+
+/* Responsive adjustment systems metrics constraints */
+@media (max-width: 640px) {
+    .category-item-row-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .category-input-group {
+        margin-right: 0;
+    }
+
+    .category-inline-input {
+        max-width: 100%;
+    }
+
+    .category-inline-update-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
