@@ -2,5 +2,5 @@ projectKey=TaskManagement-Backend
 serverUrl=http://localhost:9000
 serverVersion=26.4.0.121862
 dashboardUrl=http://localhost:9000/dashboard?id=TaskManagement-Backend
-ceTaskId=9392e0e1-d61e-48e2-864b-1d0276cc4041
-ceTaskUrl=http://localhost:9000/api/ce/task?id=9392e0e1-d61e-48e2-864b-1d0276cc4041
+ceTaskId=ef5da97d-f898-4b26-958a-a06a679bfece
+ceTaskUrl=http://localhost:9000/api/ce/task?id=ef5da97d-f898-4b26-958a-a06a679bfece
