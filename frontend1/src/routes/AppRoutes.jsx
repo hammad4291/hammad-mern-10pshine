@@ -1,32 +1,55 @@
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import LoginPage from '../pages/LoginPage';
+import DashboardPage from '../pages/DashboardPage';
+import AdminDashboardPage from '../pages/AdminDashboardPage';
+import EditTaskPage from '../pages/EditTaskPage';
+import NewTaskPage from '../pages/NewTaskPage';
+import UserTasksPage from '../pages/UserTasksPage'; // Explicitly named for standard user profiles
+import DashboardLayout from '../layouts/DashboardLayout';
+import ProfilePage from '../pages/ProfilePage';
+import AdminTasksPage from '../pages/AdminTasksPage'; // Future Admin target route placeholder
 
-// Simple temporary placeholders for your other screens
-const DashboardPlaceholder = () => <div style={{ padding: '20px' }}><h2>Dashboard (Protected Route)</h2></div>;
+const RoleProtectedRoute = ({ allowedRoles }) => {
+    const token = localStorage.getItem('accessToken');
+    const role = localStorage.getItem('userRole');
 
-// 🛡️ Route Guard: Redirects users back to login if they lack a token
-const ProtectedRoute = () => {
-    const isAuthenticated = !!localStorage.getItem('accessToken'); // Checks if token exists
-    return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
+    if (!token) return <Navigate to="/login" replace />;
+    
+    if (allowedRoles && !allowedRoles.includes(role)) {
+        return <Navigate to={role === 'Admin' ? "/admin/dashboard" : "/dashboard"} replace />;
+    }
+
+    return (
+        <DashboardLayout>
+            <Outlet />
+        </DashboardLayout>
+    );
 };
 
 export default function AppRoutes() {
     return (
         <Routes>
-            {/* 🔓 Public Entry Routes */}
             <Route path="/login" element={<LoginPage />} />
-            
-            {/* Default fallback redirects home or login */}
             <Route path="/" element={<Navigate to="/login" replace />} />
 
-            {/* 🛡️ Guarded Dashboard Routes */}
-            <Route element={<ProtectedRoute />}>
-                <Route path="/dashboard" element={<DashboardPlaceholder />} />
-                {/* Add your tasks, profile, and admin routes here later */}
+            <Route element={<RoleProtectedRoute allowedRoles={['User']} />}>
+                <Route path="/dashboard" element={<DashboardPage />} />
+                <Route path="/tasks" element={<UserTasksPage />} />
             </Route>
 
-            {/* 404 Page Not Found Catch */}
-            <Route path="*" element={<div style={{ padding: '20px' }}><h2>404 Page Not Found</h2></div>} />
+            <Route element={<RoleProtectedRoute allowedRoles={['User', 'Admin']} />}>
+                <Route path="/tasks/new" element={<NewTaskPage />} />
+                <Route path="/tasks/edit/:id" element={<EditTaskPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
+            </Route>
+            <Route element={<RoleProtectedRoute allowedRoles={['Admin']} />}>
+                <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
+                <Route path="/admin/tasks" element={<AdminTasksPage />} /> {/* Future Admin target route placeholder */}
+                {/* Future Admin target route could look like: 
+                <Route path="/admin/tasks" element={<AdminTasksPage />} /> */}
+            </Route>
+
+            <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
     );
 }

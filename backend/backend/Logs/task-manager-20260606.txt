@@ -216,3 +216,114 @@ WHERE [u].[Id] = @__userId_0
 DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
 2026-06-06 15:43:37.586 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
 2026-06-06 15:43:37.598 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44392/api/Tasks/create - 401 null null 22.7932ms
+2026-06-06 20:53:33.341 +05:00 [INF] Starting Web Host...
+2026-06-06 20:53:33.853 +05:00 [INF] User profile is available. Using 'C:\Users\hamma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-06 20:53:34.794 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/swagger/index.html - null null
+2026-06-06 20:53:35.473 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-06 20:53:35.476 +05:00 [INF] Hosting environment: Development
+2026-06-06 20:53:35.476 +05:00 [INF] Content root path: E:\10P\Task-Management-System\backend\backend
+2026-06-06 20:53:36.174 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-06 20:53:36.179 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_vs/browserLink - null null
+2026-06-06 20:53:36.180 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/swagger/index.html - 200 null text/html;charset=utf-8 1439.6845ms
+2026-06-06 20:53:36.195 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 20.3538ms
+2026-06-06 20:53:36.398 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_vs/browserLink - 200 null text/javascript; charset=UTF-8 219.1789ms
+2026-06-06 20:53:38.172 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/swagger/v1/swagger.json - null null
+2026-06-06 20:53:38.212 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 40.3862ms
+2026-06-06 21:31:49.642 +05:00 [INF] Starting Web Host...
+2026-06-06 21:31:50.253 +05:00 [INF] User profile is available. Using 'C:\Users\hamma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-06 21:31:51.421 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/swagger/index.html - null null
+2026-06-06 21:31:52.364 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-06 21:31:52.370 +05:00 [INF] Hosting environment: Development
+2026-06-06 21:31:52.370 +05:00 [INF] Content root path: E:\10P\Task-Management-System\backend\backend
+2026-06-06 21:31:53.945 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/swagger/index.html - 200 null text/html;charset=utf-8 2652.6679ms
+2026-06-06 21:31:54.253 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-06 21:31:54.309 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_vs/browserLink - null null
+2026-06-06 21:31:54.329 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 64.1198ms
+2026-06-06 21:31:54.601 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_vs/browserLink - 200 null text/javascript; charset=UTF-8 292.6834ms
+2026-06-06 21:31:56.346 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/swagger/v1/swagger.json - null null
+2026-06-06 21:31:56.404 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 58.2848ms
+2026-06-06 21:37:48.145 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44392/api/Tasks/my-tasks - null null
+2026-06-06 21:37:48.451 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-06-06 21:37:48.460 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-06-06 21:37:48.464 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44392/api/Tasks/my-tasks - 401 null null 322.4161ms
+2026-06-06 21:38:36.509 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44392/api/auth/login - null null
+2026-06-06 21:38:36.551 +05:00 [INF] CORS policy execution successful.
+2026-06-06 21:38:36.554 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44392/api/auth/login - 204 null null 46.9118ms
+2026-06-06 21:38:36.559 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44392/api/auth/login - application/json 49
+2026-06-06 21:38:36.563 +05:00 [INF] CORS policy execution successful.
+2026-06-06 21:38:36.601 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2026-06-06 21:38:36.712 +05:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-06-06 21:38:36.716 +05:00 [INF] Executing endpoint 'backend.Controllers.AuthController.Login (backend)'
+2026-06-06 21:38:36.781 +05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(backend.DTOs.LoginDto) on controller backend.Controllers.AuthController (backend).
+2026-06-06 21:38:42.887 +05:00 [INF] Executed DbCommand (120ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[RoleId], [u].[Username], [r].[Id], [r].[Name]
+FROM [Users] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-06 21:38:43.440 +05:00 [INF] Executed DbCommand (72ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [RefreshTokenExpiryTime] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+2026-06-06 21:38:43.665 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-06 21:38:43.724 +05:00 [INF] Executed action backend.Controllers.AuthController.Login (backend) in 6930.0357ms
+2026-06-06 21:38:43.726 +05:00 [INF] Executed endpoint 'backend.Controllers.AuthController.Login (backend)'
+2026-06-06 21:38:43.813 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44392/api/auth/login - 200 null application/json; charset=utf-8 7254.0978ms
+2026-06-06 21:40:25.091 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44392/api/auth/register - null null
+2026-06-06 21:40:25.102 +05:00 [INF] CORS policy execution successful.
+2026-06-06 21:40:25.103 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44392/api/auth/register - 204 null null 12.0707ms
+2026-06-06 21:40:25.120 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44392/api/auth/register - application/json 78
+2026-06-06 21:40:25.121 +05:00 [INF] CORS policy execution successful.
+2026-06-06 21:40:25.127 +05:00 [INF] Executing endpoint 'backend.Controllers.AuthController.Register (backend)'
+2026-06-06 21:40:25.150 +05:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(backend.DTOs.RegisterDto) on controller backend.Controllers.AuthController (backend).
+2026-06-06 21:40:25.427 +05:00 [INF] Executed DbCommand (13ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Email] = @__dto_Email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-06-06 21:40:25.547 +05:00 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [Password], [RefreshToken], [RefreshTokenExpiryTime], [RoleId], [Username])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-06-06 21:40:25.586 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-06-06 21:40:25.592 +05:00 [INF] Executed action backend.Controllers.AuthController.Register (backend) in 441.102ms
+2026-06-06 21:40:25.592 +05:00 [INF] Executed endpoint 'backend.Controllers.AuthController.Register (backend)'
+2026-06-06 21:40:25.594 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44392/api/auth/register - 200 null text/plain; charset=utf-8 474.4267ms
+2026-06-06 21:40:42.958 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44392/api/auth/login - null null
+2026-06-06 21:40:42.960 +05:00 [INF] CORS policy execution successful.
+2026-06-06 21:40:42.962 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44392/api/auth/login - 204 null null 3.5461ms
+2026-06-06 21:40:42.967 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44392/api/auth/login - application/json 48
+2026-06-06 21:40:42.968 +05:00 [INF] CORS policy execution successful.
+2026-06-06 21:40:42.968 +05:00 [INF] Executing endpoint 'backend.Controllers.AuthController.Login (backend)'
+2026-06-06 21:40:42.970 +05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(backend.DTOs.LoginDto) on controller backend.Controllers.AuthController (backend).
+2026-06-06 21:40:43.099 +05:00 [INF] Executed DbCommand (15ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[RoleId], [u].[Username], [r].[Id], [r].[Name]
+FROM [Users] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[Email] = @__dto_Email_0
+2026-06-06 21:40:43.117 +05:00 [INF] Executed DbCommand (8ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [RefreshTokenExpiryTime] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+2026-06-06 21:40:43.121 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-06 21:40:43.122 +05:00 [INF] Executed action backend.Controllers.AuthController.Login (backend) in 152.3868ms
+2026-06-06 21:40:43.122 +05:00 [INF] Executed endpoint 'backend.Controllers.AuthController.Login (backend)'
+2026-06-06 21:40:43.124 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44392/api/auth/login - 200 null application/json; charset=utf-8 157.2797ms

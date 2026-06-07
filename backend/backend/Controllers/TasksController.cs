@@ -28,41 +28,85 @@ public class TasksController : ControllerBase
             Title = dto.Title,
             Description = dto.Description,
             Priority = dto.Priority,
+            Status = "Pending", // Match your database string initialization default rules
             DueDate = dto.DueDate,
             CategoryId = dto.CategoryId,
-            CreatedByUserId = currentUserId
+            CreatedByUserId = currentUserId,
+            CreatedAt = DateTime.Now
         };
 
-        // Admin assigns to someone else, otherwise user self-assigns
         task.AssignedToUserId = dto.AssignedToUserId.HasValue ? dto.AssignedToUserId.Value : currentUserId;
 
         _context.Tasks.Add(task);
         await _context.SaveChangesAsync();
         return Ok("Task created successfully.");
     }
-
     [HttpGet("my-tasks")]
     public async Task<IActionResult> GetMyTasks()
     {
         int currentUserId = GetLoggedInUserId();
 
-        // EF automatically ignores any tasks where IsDeleted == true due to global filter
-        var tasks = await _context.Tasks
+        // Extract the role safely from the authenticated JWT claims context
+        var userRole = User.FindFirst(ClaimTypes.Role)?.Value;
+
+        // Build the query base with both user joins included to prevent UI property crashes
+        var query = _context.Tasks
             .Include(t => t.Category)
             .Include(t => t.CreatedByUser)
-            .Where(t => t.AssignedToUserId == currentUserId)
-            .ToListAsync();
+            .Include(t => t.AssignedToUser)
+            .AsQueryable();
 
+        // Dynamically branch the database query filter based on the token role
+        if (userRole == "Admin")
+        {
+            // Admins see tasks they created and managed out
+            query = query.Where(t => t.CreatedByUserId == currentUserId);
+        }
+        else
+        {
+            // Regular users see tasks assigned explicitly to them
+            query = query.Where(t => t.AssignedToUserId == currentUserId);
+        }
+
+        var tasks = await query.ToListAsync();
         return Ok(tasks);
     }
+    //[HttpGet("my-tasks")]
+    //public async Task<IActionResult> GetMyTasks()
+    //{
+    //    int currentUserId = GetLoggedInUserId();
 
+    //    // Safe Join executions to avoid 500 entity missing mapping breaks
+    //    var tasks = await _context.Tasks
+    //        .Include(t => t.Category)
+    //        .Include(t => t.CreatedByUser)
+    //        .Where(t => t.AssignedToUserId == currentUserId)
+    //        .ToListAsync();
+
+    //    return Ok(tasks);
+    //}
+    //[HttpGet]
+    //[Route("admin-assigned")]
+    //public async Task<IActionResult> GetAdminAssignedTasks()
+    //{
+    //    // 1. Get the unique ID of the logged-in Admin from the JWT claims
+    //    int currentAdminId = GetLoggedInUserId();
+
+    //    // 2. Fetch tasks created by this Admin but assigned to other users
+    //    var tasks = await _context.Tasks
+    //        .Include(t => t.Category)
+    //        .Include(t => t.AssignedToUser) // Join the user who is working on the task
+    //        .Where(t => t.CreatedByUserId == currentAdminId)
+    //        .ToListAsync();
+
+    //    return Ok(tasks);
+    //}
     [HttpDelete("{id}")]
     public async Task<IActionResult> SoftDeleteTask(int id)
     {
         var task = await _context.Tasks.FirstOrDefaultAsync(t => t.Id == id);
         if (task == null) return NotFound("Task not found.");
 
-        // Soft delete execution: Marks flag as true without purging row from database
         task.IsDeleted = true;
 
         await _context.SaveChangesAsync();
@@ -73,15 +117,11 @@ public class TasksController : ControllerBase
     public async Task<IActionResult> UpdateTask(int id, [FromBody] TaskUpdateDto dto)
     {
         int currentUserId = GetLoggedInUserId();
+        string userRole = User.FindFirst(ClaimTypes.Role)!.Value;
 
-        // Extract the role name string from the logged-in user's token claims
-        string userRole = User.FindFirst(System.Security.Claims.ClaimTypes.Role)!.Value;
-
-        // Fetch the task from the database
         var task = await _context.Tasks.FirstOrDefaultAsync(t => t.Id == id);
         if (task == null) return NotFound("Task not found.");
 
-        // Update universal fields allowed for everyone
         task.Title = dto.Title;
         task.Description = dto.Description;
         task.Status = dto.Status;
@@ -89,15 +129,12 @@ public class TasksController : ControllerBase
         task.DueDate = dto.DueDate;
         task.CategoryId = dto.CategoryId;
 
-        // BUSINESS RULE: Role-Based Assignment Logic
         if (userRole == "Admin")
         {
-            // If an Admin provided a targeted user ID, apply it; otherwise default back to the Admin
             task.AssignedToUserId = dto.AssignedToUserId.HasValue ? dto.AssignedToUserId.Value : currentUserId;
         }
         else
         {
-            // If a normal user is editing, they can NEVER assign it to someone else
             task.AssignedToUserId = currentUserId;
         }
 
@@ -106,10 +143,9 @@ public class TasksController : ControllerBase
     }
 
     [HttpGet("assignable-users")]
-    [Authorize(Roles = "Admin")] // 🛡️ Security Gate: Only Admins can access this list
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> GetAssignableUsers()
     {
-        // Fetch users whose linked role name matches "User"
         var users = await _context.Users
             .Where(u => u.Role.Name == "User")
             .Select(u => new UserSelectDto
@@ -121,5 +157,17 @@ public class TasksController : ControllerBase
 
         return Ok(users);
     }
+    [HttpGet("categories")]
+    public async Task<IActionResult> GetCategories()
+    {
+        var categories = await _context.Categories
+            .Select(c => new
+            {
+                c.Id,
+                c.Name
+            })
+            .ToListAsync();
 
+        return Ok(categories);
+    }
 }

@@ -1,0 +1,182 @@
+.profile-view-container {
+    padding: 40px 48px;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.profile-header-section {
+    margin-bottom: 24px;
+}
+
+.profile-main-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 6px 0;
+}
+
+.profile-sub-title {
+    font-size: 15px;
+    color: #4b5563;
+    margin: 0;
+}
+
+/* Card layout container rules */
+.profile-card-layout {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+/* Meta Profile Header Layout */
+.profile-user-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.profile-avatar-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #f0fdfa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-svg-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.meta-name-display {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 4px 0;
+}
+
+.meta-email-display {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0 0 8px 0;
+}
+
+/* Role Pills */
+.meta-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #f3f4f6;
+    color: #4b5563;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.badge-shield-icon {
+    width: 14px;
+    height: 14px;
+    color: #6b7280;
+}
+
+/* Input Fields */
+.profile-form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.profile-field-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+}
+
+.profile-input-field {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #111827;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.profile-input-field:focus {
+    outline: none;
+    border-color: #008080;
+    box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.1);
+}
+
+/* Read-Only State Fields styling */
+.field-read-only {
+    background-color: #f9fafb;
+    color: #6b7280;
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+}
+
+/* Footer Action Buttons Layout */
+.profile-action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.profile-save-btn {
+    background-color: #008080;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.profile-save-btn:hover {
+    background-color: #006666;
+}
+
+.profile-logout-btn {
+    background-color: #ffffff;
+    color: #111827;
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.profile-logout-btn:hover {
+    background-color: #f9fafb;
+}
+
+.logout-icon-svg {
+    width: 16px;
+    height: 16px;
+    color: #4b5563;
+}

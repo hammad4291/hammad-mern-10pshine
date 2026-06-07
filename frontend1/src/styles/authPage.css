@@ -1,21 +1,43 @@
+/* --- Aggressive Root Reset System --- */
+html, 
+body, 
+#root {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    min-height: 100vh !important;
+    overflow-x: hidden;
+    display: block; /* Overrides any flex-centering set by Vite's index.css */
+}
+input{
+    color: #0f172a;
+}
 /* Core Layout Configuration */
 .auth-container {
     display: flex;
+    width: 100vw;       /* Forces full viewport width edge-to-edge */
     min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #ffffff;
+    margin: 0;          
+    padding: 0;
 }
 
 /* --- Left Branding Sidebar Panel --- */
 .auth-sidebar {
     flex: 1;
-    background-color: #0d1b2a; /* Deep navy tone matching your visual layout */
+    background-color: #0d1b2a; 
     color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 48px;
+    box-sizing: border-box;    
 }
+
+/* ... Keep the rest of your original sidebar and input styles exactly the same ... */
 
 .sidebar-top {
     display: flex;
@@ -60,6 +82,7 @@
     align-items: center;
     justify-content: center;
     padding: 40px;
+    box-sizing: border-box;    /* Includes padding inside the width calculation */
 }
 
 .form-box {
@@ -136,6 +159,7 @@
     font-size: 15px;
     background-color: #f8fafc;
     transition: all 0.2s ease;
+    box-sizing: border-box;
 }
 
 .input-group input:focus {
@@ -149,6 +173,7 @@
 .password-wrapper {
     position: relative;
     display: flex;
+    width: 100%;
 }
 
 .password-wrapper input {
@@ -230,6 +255,7 @@
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    box-sizing: border-box;
 }
 
 .google-btn:hover {

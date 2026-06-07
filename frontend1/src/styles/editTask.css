@@ -1,0 +1,173 @@
+.edit-task-view-container {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: #f8fafc;
+    min-height: calc(100vh - 80px);
+    padding: 40px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.edit-task-card-frame {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 680px;
+    padding: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.back-nav-link {
+    background: none;
+    border: none;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 24px;
+    transition: color 0.2s;
+}
+
+.back-nav-link:hover {
+    color: #0f172a;
+}
+
+.edit-view-heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 32px 0;
+    letter-spacing: -0.5px;
+}
+
+.edit-task-form-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.full-width-span {
+    grid-column: span 2;
+}
+
+.form-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-field-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-text-input, 
+.form-textarea-input, 
+.form-select-dropdown {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #0f172a;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-text-input:focus, 
+.form-textarea-input:focus, 
+.form-select-dropdown:focus {
+    border-color: #00a3a4;
+    box-shadow: 0 0 0 3px rgba(0, 163, 164, 0.15);
+}
+
+.form-textarea-input {
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Visual highlights styling specifically context matching admin dropdown wrappers */
+.admin-select-highlight {
+    background-color: #f0fdfa;
+    border: 1px dashed #2dd4bf;
+    padding: 16px;
+    border-radius: 10px;
+    margin-top: 8px;
+}
+
+.admin-select-highlight .input-field-label {
+    color: #0f766e;
+}
+
+/* Form Action Button Grid Rows layout systems */
+.form-actions-footer-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 24px;
+}
+
+.action-save-btn {
+    background-color: #00a3a4;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.action-save-btn:hover {
+    background-color: #0f172a;
+}
+
+.action-save-btn:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+.action-cancel-btn {
+    background-color: #f1f5f9;
+    color: #475569;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.action-cancel-btn:hover {
+    background-color: #e2e8f0;
+    color: #0f172a;
+}
+
+.edit-status-msg {
+    text-align: center;
+    padding: 80px;
+    font-weight: 500;
+    color: #64748b;
+}
+.error-text { color: #ef4444; }
+
+@media (max-width: 640px) {
+    .edit-task-form-layout {
+        grid-template-columns: 1fr;
+    }
+    .full-width-span {
+        grid-column: span 1;
+    }
+    .edit-task-card-frame {
+        padding: 24px;
+    }
+}

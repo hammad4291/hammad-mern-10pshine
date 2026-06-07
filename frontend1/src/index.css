@@ -109,3 +109,35 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* ////////////////// */
+/* --- 🖥️ Desktop Layout Rules --- */
+.dashboard-layout-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    flex-direction: row; /* Sidebar left, content right */
+}
+
+.dashboard-main-canvas {
+    flex: 1;
+    margin-left: 260px; /* Space for the vertical sidebar */
+    padding: 40px;
+    background-color: #ffffff;
+    min-height: 100vh;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+/* --- 📱 Mobile Layout Rules (Width under 968px) --- */
+@media (max-width: 968px) {
+    .dashboard-layout-container {
+        flex-direction: column; /* Navbar on top, content stacked underneath */
+    }
+
+    .dashboard-main-canvas {
+        margin-left: 0 !important; /* Drops the side gap completely */
+        padding: 24px !important;  /* Fits perfectly like Screenshot 2026-06-06 214606.png */
+        min-height: calc(100vh - 120px); /* Adjusts canvas height based on top bar size */
+    }
+}
